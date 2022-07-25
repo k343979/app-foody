@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../pallete.dart';
+import '../widgets/widgets.dart';
 
 class LoginScreen extends StatelessWidget {
   // const LoginScreen({Key key}) : super(key: key);
@@ -8,6 +9,9 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        BackGroundImage(
+            image: 'assets/images/login_bg.png',
+        ),
         ShaderMask(
           shaderCallback: (rect) => LinearGradient(
             begin: Alignment.center,
