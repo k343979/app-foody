@@ -1,4 +1,6 @@
+import 'package:app_foody/widgets/password_input.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../pallete.dart';
 import '../widgets/widgets.dart';
 
@@ -12,23 +14,75 @@ class LoginScreen extends StatelessWidget {
         BackGroundImage(
             image: 'assets/images/login_bg.png',
         ),
-        ShaderMask(
-          shaderCallback: (rect) => LinearGradient(
-            begin: Alignment.center,
-              end: Alignment.center,
-              colors: [Colors.black, Colors.transparent]
-          ).createShader(rect),
-          child: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/login_bg.png'),
-                fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(
-                    Colors.black54,
-                    BlendMode.darken
-                )
+        Scaffold(
+          backgroundColor: Colors.transparent,
+          body: Column(
+            children: [
+              Flexible(
+                  child: Center(
+                    child: Text(
+                      'App Foody',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 60,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  )
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  TextInputField(
+                    icon: FontAwesomeIcons.envelope,
+                    hint: 'Email',
+                    inputType: TextInputType.emailAddress,
+                    inputAction: TextInputAction.next,
+                  ),
+                  PasswordInput(
+                    icon: FontAwesomeIcons.lock,
+                    hint: 'Password',
+                    inputAction: TextInputAction.done,
+                  ),
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, 'register'),
+                    child: Text(
+                      'Forget Password',
+                      style: kbodyText,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                  RoundedButton(
+                    buttonName: 'Login',
+                  ),
+                  SizedBox(
+                    height: 25,
+                  ),
+                ],
+              ),
+              GestureDetector(
+                onTap: () => Navigator.pushNamed(context, 'register'),
+                child: Container(
+                  child: Text(
+                    'Create New Account',
+                    style: kbodyText,
+                  ),
+                  decoration: BoxDecoration(
+                    border: Border(
+                      bottom: BorderSide(
+                        width: 1,
+                        color: kWhite,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 20,
               )
-            ),
+            ],
           ),
         )
       ],
