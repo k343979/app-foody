@@ -17,8 +17,13 @@ class MyApp extends StatelessWidget {
           Theme.of(context).textTheme
         ),
         primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: LoginScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => LoginScreen(),
+        'register': (context) => RegisterScreen(),
+      },
     );
   }
 }

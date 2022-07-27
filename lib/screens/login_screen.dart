@@ -1,4 +1,3 @@
-import 'package:app_foody/widgets/password_input.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../pallete.dart';
@@ -45,7 +44,7 @@ class LoginScreen extends StatelessWidget {
                     inputAction: TextInputAction.done,
                   ),
                   GestureDetector(
-                    onTap: () => Navigator.pushNamed(context, 'register'),
+                    onTap: () => Navigator.pushNamed(context, 'forgetPassword'),
                     child: Text(
                       'Forget Password',
                       style: kbodyText,
