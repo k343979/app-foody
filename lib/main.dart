@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => LoginScreen(),
+        'forget_password': (context) => ForgetPassword(),
         'register': (context) => RegisterScreen(),
       },
     );
